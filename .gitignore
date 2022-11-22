@@ -1,0 +1,19 @@
+# Skip Python Dirs
+__pycache__/
+Resources
+venv
+google-chrome-stable_current_amd64.deb
+
+# IDE Folders
+/.buildpath
+/.project
+/.settings
+/.idea
+/.vscode
+/.run
+
+# OS Folders
+.DS_Store
+
+# Python Stuff
+*.pyc
