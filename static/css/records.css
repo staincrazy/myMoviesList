@@ -40,20 +40,37 @@ main {
 }
 
 main img{
-    grid-column: span 6;
-    width: 85%;
+    grid-column: span 12;
+    width: 60%;
     border-radius: 6px;
+    position: center;
+}
+
+main > h3{
+    grid-column: span 10;
+    text-align: center;
+    font-size: 1.5em;
+    padding-top: 20px;
 }
 
 main .add-movie-form{
 
-    grid-column: span 5;
+    grid-column: span 10 ;
+    background: #fff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.05);
 }
 
+@media screen and (max-width:960px) {
 
-main > h3{
-    grid-column: span 12;
-    text-align: center;
-    font-size: 1.5em;
-    padding-top: 20px;
+    main img{
+        grid-column: 2 /span 10;
+    }
+
+    main .add-movie-form{
+        grid-column: 3 / span 8;
+        text-align: center;
+    }
+
 }

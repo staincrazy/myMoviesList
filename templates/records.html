@@ -5,111 +5,41 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/static/css/styles.css">
-    <title>Records</title>
+    <title>Add Your Movie</title>
+    <link rel="stylesheet" href="/static/css/records.css">
 </head>
 <body>
 
-<div>
-    Track your movie
-</div>
+<header class="grid">
+    <h1>Add Your Movie</h1>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="records.html">Add New Movies</a>
+        <a href="tables.html">All Movies</a>
+    </nav>
 
-<div>
+</header>
+<main class="grid">
+    <img src="/static/images/add_your_movie.jpg" alt="add movies picture">
+    <div class="add-movie-section">
 
-    <table>
-        <form>
-            <tr>
-                <td>
-                    <label for="movieTitle">Movie title</label>
-                </td>
-                <td>
-                    <input type="text" placeholder="Input game title..." id="movieTitle" required="required"
-                           maxlength="255"/>
-                </td>
-            </tr>
 
-            <tr>
-                <td>
-                    <label for="movieGenreSelectTable">Select genre</label>
-                </td>
-                <td class="select">
-                    <select name="type list" id="movieGenreSelectTable" required="required">
-                        <option value="">Select..</option>
-                        <option value="action">Action</option>
-                        <option value="shooter">Drama</option>
-                        <option value="rpg">Thriller</option>
-                        <option value="multiplayer">Comedy</option>
-                        <option value="racing">Fantasy</option>
-                    </select>
+        <h3>Add movie data</h3>
+        <div class="add-movie-form">
 
-                </td>
-
-            </tr>
-            <tr>
-                <td>
-                    <label for="movieDirectorSelection">Director</label>
-                </td>
-                <td>
-                    <select name="directors list" id="movieDirectorSelection" required="required">
-
-                        <option value="">Select..</option>
-                        <option value="steam">Wachovski</option>
-                        <option value="nintendoSwitch">Spielberg</option>
-                        <option value="playstation">Cameron</option>
-                        <option value="xbox">John Woo</option>
-                        <option value="appstore">Others</option>
-
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="movieRating">Rating</label>
-                </td>
-                <td>
-                    <input type="text" placeholder="Rating..." id="movieRating" required="required"
-                           maxlength="255"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="commentsField">Comments Field</label>
-                </td>
-                <td>
-                    <input type="text" placeholder="Leave a few comments..." id="commentsField" required="required"
-                           maxlength="255"/>
-                </td>
-            </tr>
-            <tr>
-                <td>
-
-                    <input type="submit" value="Submit">
-                </td>
-                <td>
-                    <input type="reset" value="Clear">
-                </td>
-            </tr>
-        </form>
-    </table>
-
-</div>
-
-<form action="\home.html">
-    <input type="submit" value="Go to home page">
-</form>
-<form action="\tables.html">
-    <input type="submit" value="View your movies">
-</form>
-
-<div>
-    <footer class="footer">
-        <div class="footer__content">
-            <section class="left">
-                <a class="footer__left">Made by Reanold Piatrenka</a>
-            </section>
-
+            <form>
+                <label for="movieTitle">Movie Title</label>
+                <input type="text" id="movieTitle">
+                <label for="movieGenre">Movie Genre</label>
+                <input type="text" id="movieGenre">
+                <label for="movieRating">Movie Rating</label>
+                <input type="text" id="movieRating">
+                <input type="submit" value="Submit">
+            </form>
         </div>
-    </footer>
-</div>
+    </div>
+
+</main>
 
 </body>
 </html>
