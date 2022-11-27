@@ -35,11 +35,11 @@ def select_specific_data(field, data):
     cursor = connection.cursor()
 
     if field.lower() == 'title':
-        cursor.execute(("SELECT * FROM Movies WHERE Title=?"), (data,))
+        cursor.execute("SELECT * FROM Movies WHERE Title=?", (data,))
     elif field.lower() == 'director':
-        cursor.execute(("SELECT * FROM Movies WHERE Director=?"), (data,))
+        cursor.execute("SELECT * FROM Movies WHERE Director=?", (data,))
     elif field.lower() == 'user_score':
-        cursor.execute(("SELECT * FROM Movies WHERE Score=?"), (data,))
+        cursor.execute("SELECT * FROM Movies WHERE Score=?", (data,))
     else:
         return 'Movie not found'
 
@@ -50,7 +50,4 @@ def select_specific_data(field, data):
 
 
 if __name__ == '__main__':
-    select_all_from_database()
-    print(select_specific_data('title', 'Matrix'))
-    print(select_specific_data('director', 'Wachovski'))
-    print(select_specific_data('user_score', '10'))
+    pass
