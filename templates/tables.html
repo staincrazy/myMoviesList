@@ -1,13 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Movies</title>
+    <title>{% block title %} {% endblock %} - All Movies</title>
+    <link rel="stylesheet" href="/static/css/tables.css">
+    <style>
+        .movie {
+            padding: 10px;
+            margin: 5px;
+            background-color: #f3f3f3
+        }
+    </style>
 </head>
 <body>
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="records.html">Add New Movies</a>
+        <a href="tables.html">All Movies</a>
+    </nav>
+    {% block content %}
+       {% for movie in movies %}
+        <div class='movie'>
+            <p>{{ movie['title'] }}</p>
+            <h2>{{ movie['director'] }}</h2>
+            <p>{{ movie['score'] }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
+    <hr>
 
 </body>
 </html>

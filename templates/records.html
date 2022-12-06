@@ -27,13 +27,13 @@
         <h3>Add movie data</h3>
         <div class="add-movie-form">
 
-            <form>
+            <form action="records.html" method="POST">
                 <label for="movieTitle">Movie Title</label>
-                <input type="text" id="movieTitle">
-                <label for="movieGenre">Movie Genre</label>
-                <input type="text" id="movieGenre">
+                <input type="text" name="title" id="movieTitle" required="required" value="{{ request.form['title'] }}">
+                <label for="directorName">Director Name</label>
+                <input type="text" name="director" id="directorName" required="required" value="{{ request.form['director'] }}">
                 <label for="movieRating">Movie Rating</label>
-                <input type="text" id="movieRating">
+                <input type="text" name="score" id="movieRating" required="required" value="{{ request.form['score'] }}">
                 <input type="submit" value="Submit">
             </form>
         </div>
