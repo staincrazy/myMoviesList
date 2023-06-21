@@ -10,6 +10,11 @@ def createDatabase():
     connection.close()
 
 
+def drop_database():
+    connection = sqlite3.connect("movies.db")
+    connection.cursor().execute('''DELETE * FROM TABLE Movies''')
+
+
 def connect_to_db():
     connection = sqlite3.connect("movies.db")
     connection.row_factory = sqlite3.Row
@@ -57,3 +62,13 @@ def addRecord():
     finally:
         conn.close()
         return render_template("records.html")
+
+
+@app.route("/records.html", methods=['POST'])
+def deleteRecords():
+
+    if request.form['delete_button']:
+        connect_to_db().cursor().execute('''DELETE * FROM TABLE Movies''')
+        connect_to_db().close()
+        return render_template("tables.html")
+
