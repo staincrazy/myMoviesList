@@ -67,8 +67,17 @@ def addRecord():
 @app.route("/records.html", methods=['POST'])
 def deleteRecords():
 
-    if request.form['delete_button']:
-        connect_to_db().cursor().execute('''DELETE * FROM TABLE Movies''')
-        connect_to_db().close()
+    if request.form.get('delete_button') == 'Delete All':
+
+        conn = connect_to_db()
+        conn.cursor().execute('''DELETE FROM Movies''')
+        conn.commit()
+        conn.close()
+
         return render_template("tables.html")
 
+if __name__ == '__main__':
+    conn = connect_to_db()
+    conn.cursor().execute('''DELETE FROM Movies''')
+    conn.commit()
+    conn.close()
