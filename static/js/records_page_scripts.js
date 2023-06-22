@@ -1,5 +1,6 @@
 (function (){
     function recordsPageClean(){
+
         console.log('This script is executed')
 
         document.getElementById("Submit").addEventListener('click', clearTitleField)
@@ -10,23 +11,24 @@
     function clearTitleField(){
         setTimeout(()=>{
             document.getElementById('movieTitle').value = ""
-        }, 3000)
+        }, 100)
 
     }
 
     function clearDirectorNameField(){
         setTimeout(()=>{
             document.getElementById('directorName').value = ""
-        }, 3000)
+        }, 100)
 
     }
 
     function clearMovieRatingField(){
         setTimeout(()=>{
             document.getElementById('movieRating').value = ""
-        }, 3000)
+        }, 100)
 
     }
 
     recordsPageClean()
+
 }())
