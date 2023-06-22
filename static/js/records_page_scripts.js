@@ -1,21 +1,31 @@
 (function (){
     function recordsPageClean(){
         console.log('This script is executed')
+
         document.getElementById("Submit").addEventListener('click', clearTitleField)
         document.getElementById("Submit").addEventListener('click', clearDirectorNameField)
         document.getElementById("Submit").addEventListener('click', clearMovieRatingField)
     }
 
     function clearTitleField(){
-        document.getElementById('movieTitle').value = ""
+        setTimeout(()=>{
+            document.getElementById('movieTitle').value = ""
+        }, 3000)
+
     }
 
     function clearDirectorNameField(){
-        document.getElementById('directorName').value = ""
+        setTimeout(()=>{
+            document.getElementById('directorName').value = ""
+        }, 3000)
+
     }
 
     function clearMovieRatingField(){
-        document.getElementById('movieRating').value = ""
+        setTimeout(()=>{
+            document.getElementById('movieRating').value = ""
+        }, 3000)
+
     }
 
     recordsPageClean()
