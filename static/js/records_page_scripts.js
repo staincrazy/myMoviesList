@@ -7,15 +7,15 @@
     }
 
     function clearTitleField(){
-        document.getElementById('movieTitle').clear
+        document.getElementById('movieTitle').value = ""
     }
 
     function clearDirectorNameField(){
-        document.getElementById('directorName').clear
+        document.getElementById('directorName').value = ""
     }
 
     function clearMovieRatingField(){
-        document.getElementById('movieRating').clear
+        document.getElementById('movieRating').value = ""
     }
 
     recordsPageClean()
