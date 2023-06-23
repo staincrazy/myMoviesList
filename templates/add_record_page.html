@@ -10,6 +10,8 @@
 </head>
 <body>
 
+
+
 <header class="grid">
     <h1>Add Your Movie</h1>
     <nav>
@@ -27,13 +29,16 @@
         <h3>Add movie data</h3>
         <div class="add-movie-form">
 
-            <form action="add_record_page.html" method="POST">
+            <form name="addNewRecord" action="add_record_page.html" method="POST">
                 <label for="movieTitle">Movie Title</label>
-                <input type="text" name="title" id="movieTitle" required="required" value="{{ request.form['title'] }}">
+                <input type="text" name="title" id="movieTitle" required="required" value="{{ request.form['title'] }}"
+                autocomplete="off">
                 <label for="directorName">Director Name</label>
-                <input type="text" name="director" id="directorName" required="required" value="{{ request.form['director'] }}">
+                <input type="text" name="director" id="directorName" required="required" value="{{ request.form['director'] }}"
+                autocomplete="off">
                 <label for="movieRating">Movie Rating</label>
-                <input type="text" name="score" id="movieRating" required="required" value="{{ request.form['score'] }}">
+                <input type="text" name="score" id="movieRating" required="required" value="{{ request.form['score'] }}"
+                autocomplete="off">
                 <input type="submit" value="Submit" id="Submit">
             </form>
         </div>
@@ -42,5 +47,7 @@
 </main>
 
 </body>
+
+<script src="/static/js/clear.js"></script>
 
 </html>
