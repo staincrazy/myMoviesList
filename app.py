@@ -24,25 +24,25 @@ def connect_to_db():
 app = Flask(__name__)
 
 
-@app.route("/home.html", methods=['GET', 'POST'])
+@app.route("/home_page.html", methods=['GET', 'POST'])
 def main():
-    return render_template("home.html")
+    return render_template("home_page.html")
 
 
-@app.route("/tables.html")
+@app.route("/all_records_page.html")
 def tables():
     conn = connect_to_db()
     movies = conn.execute('SELECT * FROM Movies').fetchall()
     conn.close()
-    return render_template("tables.html", movies=movies)
+    return render_template("all_records_page.html", movies=movies)
 
 
-@app.route("/records.html", methods=["GET"])
+@app.route("/add_record_page.html", methods=["GET"])
 def records():
-    return render_template("records.html")
+    return render_template("add_record_page.html")
 
 
-@app.route("/records.html", methods=["POST"])
+@app.route("/add_record_page.html", methods=["POST"])
 def addRecord():
     title = request.form["title"]
     director = request.form["director"]
@@ -61,10 +61,10 @@ def addRecord():
 
     finally:
         conn.close()
-        return render_template("records.html")
+        return render_template("add_record_page.html")
 
 
-@app.route("/records.html", methods=['POST'])
+@app.route("/all_records_page.html", methods=['POST'])
 def deleteRecords():
 
     if request.form.get('delete_button') == 'Delete All':
@@ -74,7 +74,7 @@ def deleteRecords():
         conn.commit()
         conn.close()
 
-        return render_template("tables.html")
+        return render_template("all_records_page.html")
 
 if __name__ == '__main__':
     conn = connect_to_db()

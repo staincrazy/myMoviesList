@@ -13,9 +13,9 @@
 <header class="grid">
     <h1>Add Your Movie</h1>
     <nav>
-        <a href="home.html">Home</a>
-        <a href="records.html">Add New Movies</a>
-        <a href="tables.html">All Movies</a>
+        <a href="home_page.html">Home</a>
+        <a href="add_record_page.html">Add New Movies</a>
+        <a href="all_records_page.html">All Movies</a>
     </nav>
 
 </header>
@@ -27,7 +27,7 @@
         <h3>Add movie data</h3>
         <div class="add-movie-form">
 
-            <form action="records.html" method="POST">
+            <form action="add_record_page.html" method="POST">
                 <label for="movieTitle">Movie Title</label>
                 <input type="text" name="title" id="movieTitle" required="required" value="{{ request.form['title'] }}">
                 <label for="directorName">Director Name</label>
@@ -42,7 +42,5 @@
 </main>
 
 </body>
-
-<script src = '/static/js/clear_fields.js'></script>
 
 </html>
