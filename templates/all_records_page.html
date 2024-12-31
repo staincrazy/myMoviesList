@@ -1,42 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{% block title %} {% endblock %} - All Movies</title>
-    <link rel="stylesheet" href="/static/css/tables.css">
-    <style>
-        .movie {
-            padding: 10px;
-            margin: 5px;
-            background-color: #f3f3f3
-        }
-    </style>
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %}All Movies{% endblock %}
+{% block content %}
 
-
-    <nav>
-        <a href="home_page.html">Home</a>
-        <a href="add_record_page.html">Add New Movies</a>
-        <a href="all_records_page.html">All Movies</a>
-
-        <button type="button" name="delete_button" value="Delete All">Delete All</button>
-
-    </nav>
-    {% block content %}
+    <form action="/delete_all" method="POST">
+    <button type="submit" name="delete_button" value="Delete All">Delete All</button>
+    </form>
        {% for movie in movies %}
-        <div class='movie'>
-            <p>{{ movie['title'] }}</p>
-            <h2>{{ movie['director'] }}</h2>
-            <p>{{ movie['score'] }}</p>
-        </div>
-    {% endfor %}
+            <div class='movie'>
+                <p>{{ movie['title'] }}</p>
+                <h2>{{ movie['director'] }}</h2>
+                <p>{{ movie['score'] }}</p>
+            </div>
+        {% endfor %}
 {% endblock %}
-    <hr>
 
-</body>
-
-</html>

@@ -1,50 +1,25 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
-    <link rel="stylesheet" href="/static/css/home.css">
-</head>
-<body>
+{% extends "base.html" %}
 
-<header class="grid">
-    <h1>Your Personal Movies Database</h1>
-    <nav>
-        <a href="home_page.html">Home</a>
-        <a href="add_record_page.html">Add New Movies</a>
-        <a href="all_records_page.html">All Movies</a>
-    </nav>
-</header>
-<main class="grid">
-    <img src="/static/images/movies_database.jpg" alt="homepage picture">
-    <div class="welcome">
-        <h2>Welcome</h2>
-        <p>Hi, this is you personal movie tracker.
-            Here you can add, update and delete all the movies you've watched.
-            To proceed navigate to "Add New Movies" page, or "All Movies" page
-        </p>
-    </div>
-    <h2>Fun Movies Facts</h2>
-    <div class="card">
-        <h3>Terminator 2</h3>
-        <p> Schwarzenegger told Cameron that he would like to play both Terminators, but the director thought that this would be too gimmicky. He also pointed out that it would involve spending even longer in makeup than for playing one role.</p>
-        <p>A 2015 piece in Wired reveals that when the T-1000 passes through the metal bars of a gate in the psychiatric institution, the sound effect was that of dog food coming out of a can.</p>
-    </div>
-    <div class="card">
-        <h3>Alien</h3>
-        <p>Initially, Alien wasn’t an easy sell. O’Bannon and Ronald Shusett (who co-wrote the story, but not the screenplay) bounced between producers for a while, almost landing a deal with B-movie legend Roger Corman. But the script eventually went to a new company, Brandywine Productions, which had ties to 20th Century Fox. The three founding members asked for all sorts of rewrites, but each new treatment O’Bannon and Shusett returned wasn’t swaying the brass at Fox. Then Star Wars arrived and took over the box office. Every studio in town rushed to get anything remotely sci-fi into production, so Alien got the green light.</p>
-        <p>All the horror unfolds aboard a spaceship dubbed Nostromo. The name was ripped from the title of a 1904 novel by Joseph Conrad, which follows an Italian explorer sent to South America to plunder a silver mine. That’s not the movie’s only Conrad reference, though. The shuttle that Ripley uses to escape is called Narcissus, and that moniker refers to yet another Conrad novel, with a much more problematic title.</p>
-    </div>
-    <div class="card">
-        <h3>Batman Returns</h3>
-        <p>Warner Bros. was geared up for a sequel to Batman, but Burton wasn’t interested. He said he would do a sequel if it could be “new and exciting,” but instead he went off to direct Edward Scissorhands, not intending to do a sequel to Batman.</p>
-        <p>Keaton returned as Batman, and for Catwoman, they cast…Annette Bening. Burton had liked her work in The Grifters. Then, Bening got pregnant, and she was not up for such a physically demanding role. Thus, Bening had to drop out of the film. </p>
-    </div>
+{% block title %}Home{% endblock %}
 
-</main>
-</body>
-
-</html>
+{% block content %}
+<img src="/static/images/movies_database.jpg" alt="homepage picture">
+<div class="welcome">
+    <h2>Welcome</h2>
+    <p>Hi, this is your personal movie tracker. Here you can add, update, and delete all the movies you've watched.
+       To proceed, navigate to "Add New Movies" page, or "All Movies" page.</p>
+</div>
+<h2>Fun Movies Facts</h2>
+<div class="card">
+    <h3>Terminator 2</h3>
+    <p>Schwarzenegger wanted to play both Terminators, but Cameron thought it would be too gimmicky...</p>
+</div>
+<div class="card">
+    <h3>Alien</h3>
+    <p>Initially, Alien wasn’t an easy sell, bouncing between producers until Star Wars' success...</p>
+</div>
+<div class="card">
+    <h3>Batman Returns</h3>
+    <p>Warner Bros. wanted a sequel, but Burton hesitated until a fresh approach emerged...</p>
+</div>
+{% endblock %}

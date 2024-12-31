@@ -1,53 +1,26 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Add Your Movie</title>
-    <link rel="stylesheet" href="/static/css/records.css">
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %}Add Movie{% endblock %}
+{% block content %}
 
-
-
-<header class="grid">
-    <h1>Add Your Movie</h1>
-    <nav>
-        <a href="home_page.html">Home</a>
-        <a href="add_record_page.html">Add New Movies</a>
-        <a href="all_records_page.html">All Movies</a>
-    </nav>
-
-</header>
-<main class="grid">
     <img src="/static/images/add_your_movie.jpg" alt="add movies picture">
     <div class="add-movie-section">
 
-
         <h3>Add movie data</h3>
         <div class="add-movie-form">
-
-            <form name="addNewRecord" action="add_record_page.html" method="POST">
+           <form id="addMovieForm">
                 <label for="movieTitle">Movie Title</label>
-                <input type="text" name="title" id="movieTitle" required="required" value="{{ request.form['title'] }}"
-                autocomplete="off">
+                <input type="text" name="title" id="movieTitle" required autocomplete="off">
                 <label for="directorName">Director Name</label>
-                <input type="text" name="director" id="directorName" required="required" value="{{ request.form['director'] }}"
-                autocomplete="off">
+                <input type="text" name="director" id="directorName" required autocomplete="off">
                 <label for="movieRating">Movie Rating</label>
-                <input type="text" name="score" id="movieRating" required="required" value="{{ request.form['score'] }}"
-                autocomplete="off">
+                <input type="text" name="score" id="movieRating" required autocomplete="off">
                 <input type="submit" value="Submit" id="Submit">
             </form>
+                <div id="responseMessage"></div>
+                <script src="/static/js/add_movie.js"></script>
         </div>
     </div>
 
-</main>
-
-</body>
-
 <script src="/static/js/clear.js"></script>
 
-</html>
+{% endblock %}
